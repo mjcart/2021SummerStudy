@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int i, result;
+	int num1, num2;
+	cin >> num1 >> num2;
+
+	result = num2 * 2 - num1;
+	cout << result;
+    return 0;
+}

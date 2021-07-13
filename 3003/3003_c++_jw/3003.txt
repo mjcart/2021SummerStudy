@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int i, temp;
+	int num[6] = { 1,1,2,2,2,8 };
+	int result[5];
+	for (i = 0; i < 6; i++)
+	{
+		cin >> temp;
+		cout << num[i] - temp << " ";
+	}
+
+    return 0;
+}
