@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int i;
+	int num[4];
+	int result1 = 0, result2 = 0;
+	int temp, tmp;
+	for (i = 0; i < 4; i++)
+	{
+		cin >> num[i];
+		result1 = result1 + num[i];
+		
+	}	
+	cout << result1 / 60 << "\n" << result1 % 60;
+	return 0;
+}
