@@ -1,0 +1,7 @@
+a=input()
+
+for i in range(0xac00,0xd7a4):#유니코드로 '가'는0xac00이다. 그 뒤로 순서대로 존재한다.
+    if(a==chr(i)):
+        print(i-0xac00+1)
+    
+    
