@@ -1,0 +1,4 @@
+import math
+a=input()
+b=math.ceil(int(a)/5)
+print(b)
