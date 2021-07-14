@@ -1,0 +1,4 @@
+from datetime import datetime as dt
+from datetime import timedelta
+time=dt.now().date()-timedelta(hours=-9)
+print(time)
