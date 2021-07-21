@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+int main() 
+{
+	int a;
+	int b[50];
+	int min = 1000001, max = 0;
+	int c;
+	cin >> a;
+	for (int i = 0; i < a; i++) {
+		cin >> b[i];
+		if (min > b[i])min = b[i];
+		if (max < b[i])max = b[i];
+	}
+	c = min*max;
+	cout << c;
+}
