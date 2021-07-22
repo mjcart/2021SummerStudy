@@ -1,0 +1,66 @@
+#include<iostream>
+
+using namespace std;
+int getleast(int a, int b);
+int main() {
+	int n, m;
+	char answer[8][8] = { {'W','B','W','B','W','B','W','B'},
+		{'B','W','B','W','B','W','B','W'},
+		{'W','B','W','B','W','B','W','B'},
+		{'B','W','B','W','B','W','B','W'},
+		{'W','B','W','B','W','B','W','B'},
+		{'B','W','B','W','B','W','B','W'},
+		{'W','B','W','B','W','B','W','B'},
+		{'B','W','B','W','B','W','B','W' } };
+	char answer1[8][8] = { {'B','W','B','W','B','W','B','W'},
+		{'W','B','W','B','W','B','W','B'},
+		{'B','W','B','W','B','W','B','W'},
+		{'W','B','W','B','W','B','W','B'},
+		{'B','W','B','W','B','W','B','W'},
+		{'W','B','W','B','W','B','W','B'},
+		{'B','W','B','W','B','W','B','W'},
+		{'W','B','W','B','W','B','W','B' } };
+	char board[50][50];
+	cin >> n >> m;
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < m; j++) {
+			cin >> board[i][j];
+		}
+	}
+	int needchange = 0;
+	int needchange1 = 0;
+	int least=-1;
+	for (int i=0;i<=n-8;i++){
+		for (int j = 0; j <= m - 8; j++) {
+			needchange = 0;
+			needchange1 = 0;
+			
+			for (int k = 0; k < 8; k++) {
+				for (int l = 0; l < 8; l++) {
+					if (answer[k][l] != board[i + k][j + l]) {
+						needchange ++;
+					}
+					if (answer1[k][l] != board[i + k][j + l]) {
+						needchange1 ++;
+					}
+				}
+			}
+			if (least == -1) {
+				least = getleast(needchange, needchange1);
+			}
+			else {
+				least = getleast(least, needchange);
+				least = getleast(least, needchange1);
+			}
+		}
+	}
+	cout << least;
+}
+int getleast(int a, int b) {
+	if (a > b) {
+		return b;
+	}
+	else {
+		return a;
+	}
+}
