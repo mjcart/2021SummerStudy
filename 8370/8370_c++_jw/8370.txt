@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int i;
+	int num[4];
+	int result;
+	for (i = 0; i < 4; i++)
+	{
+		cin >> num[i];
+	}
+	result = num[0] * num[1] + num[2] * num[3];
+
+	cout << result;
+	return 0;
+}

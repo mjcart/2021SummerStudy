@@ -1,0 +1,4 @@
+n,m = map(int,input().split())
+i = int(input())
+j = int(input())
+print(i*j)

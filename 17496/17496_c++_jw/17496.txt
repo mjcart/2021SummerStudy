@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+
+	int n1, n2, n3, temp, num, result;
+
+	cin >> n1 >> n2 >> n3 >> temp;
+	num = (n1 - 1) / n2 * n3;
+	result = temp * num;
+
+	cout << result;
+
+	return 0;
+}

@@ -1,23 +1,23 @@
 #include <iostream>
 using namespace std;
 
-int result[100][100];
+int result[31][31];
 
 int main() {
 
-
+	
 	int i, j, k;
 	int n1, n2;
 	int num;
-
-	for (i = 1; i < 100; i++)
+			
+	for (i = 1; i < 31; i++)
 	{
 		result[1][i] = i;
 	}
 
-	for (i = 2; i < 100; i++)
+	for (i = 2; i < 31; i++)
 	{
-		for (j = i; j < 100; j++)
+		for (j = i; j < 31; j++)
 		{
 			for (k = j - 1; k >= 1; k--)
 			{
@@ -26,14 +26,14 @@ int main() {
 
 		}
 	}
+	
+		cin >> num;
 
-	cin >> num;
-
-	for (i = 0; i < num; i++)
-	{
-		cin >> n1 >> n2;
-		cout << result[n1][n2] << "\n";
-	}
-
+		for (i = 0; i < num; i++)
+		{
+			cin >> n1 >> n2;
+			cout << result[n1][n2] << "\n";
+		}
+				
 	return 0;
 }
