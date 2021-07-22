@@ -1,0 +1,98 @@
+#include<iostream>
+using namespace std;
+
+	string result[100][100];
+	string black[8][8];
+	string white[8][8];
+	
+	int bl(int k, int l) {
+
+		int i, j;
+		int temp1 = 0;
+		for (i = k; i < k + 8; i++)
+		{
+			for (j = l; j < l + 8; j++)
+			{
+				if (result[i][j] != black[i - k][j - l])
+				{
+					temp1 = temp1 + 1;
+				}
+			}
+		}
+		return temp1;
+	}
+
+	int wh(int k, int l) {
+
+		int i, j;
+		int temp2 = 0;
+
+		for (i = k; i < k + 8; i++)
+		{
+			for (j = l; j < l + 8; j++)
+			{
+				if (result[i][j] != white[i - k][j - l])
+				{
+					temp2 = temp2 + 1;
+				}
+			}
+		}
+		return temp2;
+	}
+
+
+int main(){
+
+
+	int i, j, k, l;
+	for (i = 0; i < 8; i++)
+	{
+		for (j = 0; j < 8; j++)
+		{
+			if ((i + j) % 2 > 0)
+			{
+				black[i][j] = "W";
+				white[i][j] = "B";
+			}
+			else
+			{
+				black[i][j] = "B";
+				white[i][j] = "W";
+			}			
+		}
+	}
+
+	int n1, n2;
+	int re = 0;
+	cin >> n1 >> n2;
+
+
+	for (i = 0; i < n1; i++)
+	{
+		for (j = 0; j < n2; j++)
+		{
+			cin >> result[i][j];
+		}
+	}
+
+	for (i = 0; i < n1 - 7; i++)
+	{
+		for (j = 0; j < n2 - 7; j++)
+		{
+			if (bl(i, j) < wh(i, j))
+			{
+				re = bl(i, j);
+			}
+			else
+			{
+				re = wh(i, j);
+			}
+			
+		}
+	}
+	
+	cout << re;
+	
+	return 0;
+}
+
