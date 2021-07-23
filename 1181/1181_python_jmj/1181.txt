@@ -1,0 +1,13 @@
+N=int(input())
+l=[]
+for i in range(N):
+    word=input()
+    l.append(word)
+l.sort()#알파벳순 정렬
+l.sort(key=len)#길이순정렬
+newlist=[]
+for v in l:#중복제거
+    if v not in newlist:#중복시 한번만 리스트에 추가됨
+        newlist.append(v)
+for a in newlist:
+    print(a)
