@@ -1,0 +1,92 @@
+#include<iostream>
+
+using namespace std;
+class Queue {
+public:
+	Queue();
+	void enqueue(int e);
+	int dequeue();
+	void list();
+	struct Node;
+	typedef Node* nodePtr;
+	struct Node {
+		int num;
+		nodePtr pre;
+		nodePtr next;
+	};
+	nodePtr f;
+	nodePtr r;
+	nodePtr p;
+	int cnt;
+};
+Queue::Queue()
+{
+	// set both front and rear to null pointers
+	f = 0;
+	r = 0;
+	cnt = 0;
+}
+
+void Queue::list() {
+	nodePtr l(f);
+	while (l != r) {
+
+		cout << l->num << endl;
+		l = l->next;
+	}
+	cout << l->num;
+}
+void Queue::enqueue(int e) {
+	//새 노드 생성 및 큐마지막에 추가
+	Node* n(new Node);
+	n->next = 0;
+	n->num = e;
+	if (f != 0) {//큐가 비어있지 않음
+		r->next = n;
+		n->pre = r;
+		r = n;
+		r->next = f;
+		f->pre = r;
+	}
+	else {//큐에 첫 아이템 추가
+		f = n;
+		r = n;
+		n->pre = n;
+		n->next = n;
+	}
+	cnt++;
+}
+
+int Queue::dequeue() {
+	nodePtr n(p);
+	int element(p->num);
+	p->pre->next = p->next;//지워진부분 뛰어넘어 이어주기
+	p->next->pre = p->pre;//pre 재설정
+	p = p->next;//커서 이동
+	delete n;
+	cnt--;
+	return element;
+}
+
+
+int main() {
+	int N,K;
+	cin >> N >> K;
+	Queue A;
+	for (int i = 0; i < N; i++) {//큐에 추가
+		A.enqueue(i + 1);
+	}
+	A.p = A.f;
+	cout << '<';
+	for (int j = 0; j < N; j++) {
+		for (int i = 0; i < K - 1; i++) {//k-1만큼 커서 이동
+			A.p =A. p->next;
+		}
+		cout << A.dequeue();
+		if (A.cnt != 0) {
+			cout << ", ";
+		}
+	}
+	cout << '>';
+	return 0;
+}
