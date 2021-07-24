@@ -1,0 +1,45 @@
+#include<iostream>
+#include <cmath>
+using namespace std;
+
+
+double x1, x2, y1, y2, z1, z2;
+
+int bit(double i, double j, double k, double l) {
+
+	 return sqrt((i - j) * (i - j) + (k - l) * (k - l));
+
+}
+
+
+int main(){
+	
+
+	
+	cin >> x1 >> x2 >> y1 >> y2 >> z1 >> z2;
+	
+
+	double q1 = bit(x1, y1, x2, y2);
+	double q2 = bit(x1, z1, x2, z2);
+	double q3 = bit(y1, z1, y2, z2);
+
+	double w1 = (q1+q2)*2;
+	double w2 = (q1+q3)*2;
+	double w3 = (q2+q3)*2;
+	
+	cout << fixed;
+	cout.precision(16);
+
+	cout << q3 << "\n";
+	
+
+	if ((y1 - x1) * (z2 - x2) == (y2 - x2) * (z1 - x1))
+	{
+		cout << "-1";
+	}
+	else
+	{
+		cout << max(w1, (max(w2, w3)) - min(w1, min(w2, w3)) * 2);
+	}
+	return 0;
+}
