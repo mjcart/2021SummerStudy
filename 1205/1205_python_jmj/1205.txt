@@ -1,0 +1,21 @@
+N, S,P=map(int,input().split())
+if N != 0:
+    scorelist=input().split()
+    for i in range(N):
+        scorelist[i]=int(scorelist[i])
+    scorelist.append(S)
+    scorelist.sort(reverse=True)
+
+    rank=-1
+    for i in range(len(scorelist)):
+        if scorelist[i]==S:
+            rank=i+1
+            break
+        
+if N==0:
+    print(1)
+elif (scorelist[N]==S and N>=P) or rank>P:
+    print(-1)
+else:
+    print(rank) 
+    

@@ -1,0 +1,3 @@
+python
+jmj
+N이 0일때 주의하자 N이 0일때 반복문이나 리스트에 접근할시 EndofFileError발생할수 있다
