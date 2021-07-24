@@ -1,0 +1,25 @@
+N, M=map(int,input().split())
+P=[]
+for i in range(M):
+    P.append(int(input()))
+P.sort(reverse=True)
+sum=[]
+#두가지 경우로나눔
+if N>=M:#달걀수가 충분해서 최대 모든 사람이 살수 있음
+    for i in range(M):
+        A=P[i]
+        sum.append(0)
+        for j in range(M):
+            if P[j]>=A:
+                sum[i]+=A
+    
+else:#가장 비싸게 제시한 사람가격 순으로 N명 구매가능
+    for i in range(N):
+        A=P[i]
+        sum.append(0)
+        for j in range(N):
+            if P[j]>=A:
+                sum[i]+=A
+
+
+print(max(sum)//(sum.index(max(sum))+1),max(sum))
