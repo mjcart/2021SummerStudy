@@ -1,0 +1,16 @@
+word=input()
+ans=""
+for i in range(len(word)-2):
+    tmp1=word[0:i+1]
+    tmp1=tmp1[::-1]
+    for j in range(i+1,len(word)-1):
+        tmp2=word[i+1:j+1]
+        tmp2=tmp2[::-1]
+        tmp3=word[j+1:len(word)]
+        tmp3= tmp3[::-1]
+        tmp=tmp1+tmp2+tmp3
+        if ans=="":
+            ans=tmp
+        elif ans>tmp:
+            ans=tmp
+print(ans)
