@@ -1,0 +1,44 @@
+#include<iostream>
+#include<queue>
+#include <cmath>
+using namespace std;
+
+
+int main(){
+	
+	int n1, n2;
+	int i, j, temp = 0;
+	cin >> n1 >> n2;
+
+	queue<int> q;
+
+	for (i = 1; i < n1 + 1; i++)
+	{
+		q.push(i);
+	}
+	cout << "<";
+
+	for (i = 0; i < n1; i++)
+	{
+		if (temp = n1)
+		{
+			for (j = 0; j < n2 - 1; j++)
+			{
+				q.push(q.front());
+				q.pop();
+			}
+			cout << q.front();
+			q.pop();
+					
+			
+			if (!q.empty())
+			{
+				cout << ", ";
+			}			
+		}
+		temp = temp + 1;
+	}
+
+	cout << ">";
+	return 0;
+}
