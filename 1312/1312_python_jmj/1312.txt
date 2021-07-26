@@ -1,0 +1,7 @@
+A,B,N=map(int,input().split())
+S=A%B
+for i in range(N-1):#나머지 곱하기 10한후 B로 나눈나머지 S에 저장 =>소숫점 N번자리 찾기
+    
+    S=(S*10)%B
+    
+print(int(S*10/B))#마지막으로 몫을 구함
