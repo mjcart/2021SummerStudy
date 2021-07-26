@@ -1,0 +1,19 @@
+N=int(input())
+strlist=[]
+for i in range(N):
+    strlist.append(input())
+charcheck=[]
+cnt=0
+for i in range(N):
+    charcheck=[]
+    for j in range(len(strlist[i])):#문자 하나씩 검사
+        if strlist[i][j] not in charcheck:#charchek에 없는문자면 추가
+            charcheck.append(strlist[i][j])
+        else:#charchek에 있지만 바로 전에 나온 문자랑 같다면 넘어가고 아니면 검사중단
+            if strlist[i][j]==strlist[i][j-1]:
+                pass
+            else:
+                break
+        if j==len(strlist[i])-1:#단어 마지막에 올때까지 걸러지지않았다면 cnt증가==>그룹 단어
+            cnt+=1
+print(cnt)
