@@ -1,0 +1,46 @@
+route=[[0]*6 for _ in range(6)]#6X6판 나이트가 존재했었으면 1 온 적 없으면 0
+root=[]
+for i in range(36):
+    root.append(input())
+#임시 입력값
+#root=["A1","B3","A5","C6","E5","F3","D2","F1","E3","F5","D4","B5","A3","B1","C3","A2","C1","E2","F4","E6","C5","A6","B4","D5","F6","E4","D6","C4","B6","A4","B2","D1","F2","D3","E1","C2"]
+
+startx=-1#startx초기화==>나이트의 x좌표
+starty=-1#starty초기화==>나이트의 y좌표
+firstx=int("0x"+root[0][0],16)-int("0xA",16)
+firsty=int(root[0][1])-1
+
+for i in range(36):
+    x=int("0x"+root[i][0],16)-int("0xA",16)#x축 A~F를 0~5로 바꿈
+    y=int(root[i][1])-1#y축 1~6을 0~5로 바꿈
+    #if x<0 or y<0 or x>5 or y>5:#6X6안에 존재하지않다면
+    #        print("Invalid")
+    #        break
+            
+    if startx==-1 and starty==-1:#초기값이라면
+        startx=x
+        starty=y
+        route[x][y]=1
+
+    #나이트의 움직임이고 도착위치에 나이트가 온 적이 없다면
+    elif ((abs(x-startx)==2 and abs(y-starty)==1) or (abs(x-startx)==1 and abs(y-starty)==2)) and route[x][y]==0 :
+        startx=x
+        starty=y
+        route[x][y]=1
+        #print("state2",x,y)
+        #print(route)
+        
+        if i==35 :#마지막 나이트 위치까지 도착
+            #첫번째 위치로 이동가능한지 판별
+            if (abs(firstx-startx)==2 and abs(firsty-starty)==1) or (abs(firstx-startx)==1 and abs(firsty-starty)==2) :
+                print("Valid")
+
+            else:
+                #print("state4",x,y)
+                print("Invalid")
+                
+    #나이트의 움직임이 아니거나 나이트가 중복위치했을경우
+    else:
+        #print("state3",x,y)
+        print("Invalid")
+        break
