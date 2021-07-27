@@ -1,0 +1,24 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+
+	int n1, n2, num;
+	cin >> n1 >> n2 >> num;
+	int i, result;
+
+	for (i = 0; i < num; i++) {
+
+		n1 = n1 % n2;
+		n1 = n1 * 10;
+		result = n1 / n2;
+		
+	}
+	
+	cout << result;
+	return 0;
+}
+

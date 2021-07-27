@@ -1,0 +1,45 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+
+	int num;
+	cin >> num;
+	int i, j, k, cnt = 0;
+	int result[100]; // 알파벳 배열
+	string str;
+
+	for (i = 0; i < num; i++)
+	{
+		cin >> str;
+		for (k = 0; k < 100; k++)result[k] = 0; // 배열 0으로 초기화
+		result[str[0] - 'a'] = 1; // 첫번째 자리를 기준으로 비교해야되기때문에 
+
+		for (j = 0; j < str.length() - 1; j++) 
+		{
+			if (str[j] != str[j + 1]) // 첫번째 자리와 두번째 자리 비교, 알파벳이 같으면 그냥넘어감
+			{
+				int temp = str[j + 1] - 'a'; // 해당 알파벳 배열 자리 지정
+				if (result[temp] == 0) // 해당 알파벳 처음사용시
+				{
+					result[temp] = result[temp] + 1; // 1번 사용함
+				}
+				else break; // 바로 나옴
+
+			}
+		
+		}	
+
+		if (j == str.length() - 1) // 1부터 3까지면 3은 포함이 안되지만 3까지 간다는소리같음
+		{
+				cnt = cnt + 1;
+		}
+	
+	}
+
+	cout << cnt;
+	return 0;
+}
