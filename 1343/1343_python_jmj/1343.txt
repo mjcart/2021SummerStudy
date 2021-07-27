@@ -1,0 +1,28 @@
+n=input()
+cnt=0#연속으로 온X의 수
+answer=""
+for i in range(len(n)):# 문자를 확인하며 반복
+    
+    if n[i] =='X':
+        cnt+=1
+        if cnt==4:#지금까지 X가 4번 누적
+            answer+="AAAA"#문자열에 AAAA추가
+            cnt=0#초기화
+
+    else:#'.'일때
+        if cnt==2:#X가 2번 누적
+            answer+="BB"#문자열에 BB추가
+            cnt=0#초기화
+        elif cnt==1 or cnt==3:#X가 홀수개로 남음==>덮을 수 없다
+            print(-1)
+            break
+        answer+='.'
+        
+    if i ==len(n)-1:#마지막 도착
+        if cnt==2:#X가 2번 누적
+            answer+="BB"#문자열에 BB추가
+                
+        elif cnt==1 or cnt==3:#X가 홀수개로 남음==>덮을 수 없다
+            print(-1)
+            break
+        print(answer)# 정답 출력
