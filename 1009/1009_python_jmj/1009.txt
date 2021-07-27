@@ -1,0 +1,9 @@
+T=int(input())
+answer=[]
+for i in range(T):
+    a,b=map(int,input().split())
+    answer=(pow(a,b,10))
+    if answer==0:
+        print(10)
+    else:
+        print(answer)
