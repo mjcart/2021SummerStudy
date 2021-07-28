@@ -1,0 +1,24 @@
+
+answer=[]
+cnt=1
+while True:
+    n=int(input())
+    if n==0: break
+    student=[]
+   
+    student=[input() for _ in range(n)]#학생이름을 저장 매 시나리오때마다 초기화된다=>append방식이 아님
+
+    studentid=[0 for _ in range(n)]#학생들의 반출현황 초기화
+
+    for i in range(2*n-1):
+        sid,check=input().split()
+        studentid[int(sid)-1]+=1
+        
+    for i in range(n):
+        
+        if studentid[i]%2==1:#반출현황이 홀수=>못돌려받음
+            answer.append('{0} {1}'.format(cnt,student[i]))#학생저장
+            cnt+=1
+
+for i in answer:
+    print(i)
