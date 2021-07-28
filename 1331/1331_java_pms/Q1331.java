@@ -31,9 +31,7 @@ public class Q1331 {
 				return;
 			}
 			
-			if(Math.abs(nowx - prevx) == 2 && Math.abs(nowy - prevy) == 1) {	// 나이트가 이전 위치에서 이동할 수 있는 위치가 아니면 Invalid
-				
-			}else if(Math.abs(nowx - prevx) == 1 && Math.abs(nowy - prevy) == 2) {
+			if(Math.abs(nowx - prevx) == 2 && Math.abs(nowy - prevy) == 1 || Math.abs(nowx - prevx) == 1 && Math.abs(nowy - prevy) == 2) {	// 나이트가 이전 위치에서 이동할 수 있는 위치가 아니면 Invalid
 				
 			}else {
 				System.out.println("Invalid");
@@ -45,9 +43,7 @@ public class Q1331 {
 			prevy = nowy;
 		}
 		
-		if(Math.abs(nowx - startx) == 2 && Math.abs(nowy - starty) == 1) {	// 마지막 도달위치에서 첫 번째 위치로 갈 수 없으면 Invalid
-			
-		}else if(Math.abs(nowx - startx) == 1 && Math.abs(nowy - starty) == 2) {
+		if(Math.abs(nowx - startx) == 2 && Math.abs(nowy - starty) == 1 || Math.abs(nowx - startx) == 1 && Math.abs(nowy - starty) == 2) {	// 마지막 도달위치에서 첫 번째 위치로 갈 수 없으면 Invalid
 			
 		}else {
 			System.out.println("Invalid");
