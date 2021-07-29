@@ -1,0 +1,29 @@
+floor=[]
+n,m=map(int,input().split())
+for i in range(n):
+    floor.append(input())
+prevw=0
+prevh=0
+tile=0
+for i in range(n):#가로줄을 검사한다
+    prevw=0#새로운 가로줄 검사 때마다 초기화
+    for j in range(m):
+        if floor[i][j]=='-' and prevw==0:#전에 -가 아니였고 -가 왔을 때
+            tile+=1
+            prevw=1;
+        elif floor[i][j]=='-' and prevw==1:#전에 -였고 -가 왔을 때
+            continue
+        else:#다른게 오면 -카운트 0
+            prevw=0
+            
+for j in range(m):#세로줄을 검사한다
+    prevh=0
+    for i in range(n):
+        if floor[i][j]=='|' and prevh==0:#전에|가 아니였고 |가 왔을 때
+            tile+=1
+            prevh=1
+        elif floor[i][j]=='|' and prevh==1:#전에 |였고 |가 왔을 때
+            continue
+        else:#다른게 오면 카운트 0
+            prevh=0
+print(tile)
