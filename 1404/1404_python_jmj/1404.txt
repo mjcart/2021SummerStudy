@@ -1,0 +1,38 @@
+a=[]
+winrate=[[0]*8 for _ in range(8)]
+a=input().split()
+winrate[0][1:8]=a[0:7]
+winrate[1][2:8]=a[7:13]
+winrate[2][3:8]=a[13:18]
+winrate[3][4:8]=a[18:22]
+winrate[4][5:8]=a[22:25]
+winrate[5][6:8]=a[25:27]
+winrate[6][7]=a[27]
+
+
+def wp(a,b):
+    if a<b:
+        return (int(winrate[a][b]))/100
+    else:
+        return (100-int(winrate[b][a]))/100
+        
+
+final0=wp(0,1)*(wp(2,3)*wp(0,2)+wp(3,2)*wp(0,3))
+final1=wp(1,0)*(wp(2,3)*wp(1,2)+wp(3,2)*wp(1,3))
+final2=wp(2,3)*(wp(0,1)*wp(2,0)+wp(1,0)*wp(2,1))
+final3=wp(3,2)*(wp(0,1)*wp(3,0)+wp(1,0)*wp(3,1))
+final4=wp(4,5)*(wp(6,7)*wp(4,6)+wp(7,6)*wp(4,7))
+final5=wp(5,4)*(wp(6,7)*wp(5,6)+wp(7,6)*wp(5,7))
+final6=wp(6,7)*(wp(4,5)*wp(6,4)+wp(5,4)*wp(6,5))
+final7=wp(7,6)*(wp(4,5)*wp(7,4)+wp(5,4)*wp(7,5))
+winner=[0]*8
+winner[0]=final0*(final4*wp(0,4)+final5*wp(0,5)+final6*wp(0,6)+final7*wp(0,7))
+winner[1]=final1*(final4*wp(1,4)+final5*wp(1,5)+final6*wp(1,6)+final7*wp(1,7))
+winner[2]=final2*(final4*wp(2,4)+final5*wp(2,5)+final6*wp(2,6)+final7*wp(2,7))
+winner[3]=final3*(final4*wp(3,4)+final5*wp(3,5)+final6*wp(3,6)+final7*wp(3,7))
+winner[4]=final4*(final0*wp(4,0)+final1*wp(4,1)+final2*wp(4,2)+final3*wp(4,3))
+winner[5]=final5*(final0*wp(5,0)+final1*wp(5,1)+final2*wp(5,2)+final3*wp(5,3))
+winner[6]=final6*(final0*wp(6,0)+final1*wp(6,1)+final2*wp(6,2)+final3*wp(6,3))
+winner[7]=final7*(final0*wp(7,0)+final1*wp(7,1)+final2*wp(7,2)+final3*wp(7,3))
+for i in winner:
+    print(i,end=' ')
