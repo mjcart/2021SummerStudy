@@ -1,0 +1,13 @@
+candy=[]
+n=int(input())
+
+for i in range(n):
+    candy.append(int(input()))
+
+
+cnt=0
+while n!=1 and candy[0]<=max(candy[1:]) :#다솜이 제외 가장큰것 찾기
+    candy[candy[1:].index(max(candy[1:]))+1]-=1#가장큰것에서 1빼기
+    candy[0]+=1#다솜이 1표추가
+    cnt+=1
+print(cnt)
