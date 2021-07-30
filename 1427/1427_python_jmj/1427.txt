@@ -1,0 +1,6 @@
+n=[]
+n=list(input())
+
+n.sort(reverse=1)
+for i in n:
+    print(i,end='')
