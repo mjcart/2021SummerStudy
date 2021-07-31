@@ -1,0 +1,16 @@
+#include <iostream>
+#include <time.h>
+#include <vector>
+using namespace std;
+
+int main() {
+	
+	long long int n1, n2, result;
+	cin >> n1 >> n2;
+
+	result = (n1 + n2) * (n1 - n2);
+
+	cout << result;
+
+	return 0;
+}

@@ -1,0 +1,14 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+
+int main() {
+	
+	int num;
+	cin >> num;
+	cout << num - 1946;
+	
+	return 0;
+}
+
