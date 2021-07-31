@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+
+	int x, y, w, h;
+	int result1, result2, i;
+
+	cin >> x >> y >> w >> h;
+
+	result1 = min(x, y);
+	result2 = min(w - x, h - y);
+
+	cout << min(result1, result2);
+
+	return 0;
+}

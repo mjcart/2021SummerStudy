@@ -1,0 +1,55 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+
+int main() {
+	
+	string str;
+	cin >> str;
+	int num[6] = { 0, };
+	string result[8] = { "000","001","010","011","100","101","110","111" };
+
+	bool check = false;
+
+	for (int i = 0; i < str.length(); i++)
+	{
+		num[i] = str[i] - '0';
+
+	
+
+		if (check == false && num[i] < 4) 
+		{
+			
+			if (num[i] == 1)
+			{
+				cout << "1";
+			}
+			if (num[i] == 2)
+			{
+				cout << "10";
+			}
+			if (num[i] == 3)
+			{
+				cout << "11";
+			}
+
+		}
+	
+		else
+		{
+			cout << result[num[i]];
+		}		
+
+		if (num[i] != 0)
+		{
+			check = true;
+		}
+	}
+	
+	if (check == false)
+	{
+		cout << "0";
+	}
+	return 0;
+}

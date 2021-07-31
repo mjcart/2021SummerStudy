@@ -1,0 +1,41 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+
+int main() {
+	
+	int num, Y, M;
+	cin >> num;
+	int n[100];
+	int result1 = 0, result2 = 0;
+	int result[3];
+
+	for (int i = 0; i < num; i++)
+	{
+		cin >> n[i];
+		
+		result1 += (n[i] / 30 + 1) * 10;
+		result2 += (n[i] / 60 + 1) * 15;
+
+	}
+	
+	if (result1 < result2)
+	{
+		cout << "Y " << result1;
+	}
+	
+	else if (result1 == result2)
+	{
+		cout << "Y M " << result2;
+	}
+
+	else
+	{
+		cout << "M " << result2;
+	}
+
+
+	
+	return 0;
+}
