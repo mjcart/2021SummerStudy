@@ -1,0 +1,12 @@
+BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+String s = bf.readLine();
+StringTokenizer st = new StringTokenizer(s); 
+int a = Integer.parseInt(st.nextToken());
+int b = Integer.parseInt(st.nextToken());
+int cnt , sum ;
+
+for (int i =a; i<=b; ,i++)
+{
+i * i = cnt
+sum = sum + cnt ;
+};
