@@ -1,3 +1,7 @@
 python
 jmj
 N이 0일때 주의하자 N이 0일때 반복문이나 리스트에 접근할시 EndofFileError발생할수 있다
+
+java
+pms
+이거 ㄹㅇ 저도 nullpointererror 맞고 살짝 당황 문제를 열심히 읽읍시다
