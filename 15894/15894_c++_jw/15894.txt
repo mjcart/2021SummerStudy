@@ -1,0 +1,13 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main()
+{
+    unsigned long long int num;
+    cin >> num;
+    cout << num * 4;
+
+
+    return 0;
+}
