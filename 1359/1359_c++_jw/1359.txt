@@ -1,0 +1,49 @@
+#include <iostream>
+#include <cstring>
+#include <string>
+using namespace std;
+
+
+long long function(int num1, int num2)
+{
+    int n1 = 1;
+    int n2 = 1;
+    int nu2 = num2;
+    for (int i = 0; i < nu2; i++){
+        n1 *= num1--;
+        n2 *= num2--;
+    }
+
+    return n1 / n2;
+}
+
+int main()
+{
+    int n, m, k;
+
+    cin >> n >> m >> k;
+
+    double result = 0;
+    double result1 = function(n, m); // 전체 경우의수
+
+    while (m >= k)
+    {
+        if (n - m < m - k) // 10 7 2 일경우 예외처리
+        {
+            k++;
+            continue;
+        }
+
+        double result2 = function(m, k) * function(n - m, m - k);
+
+        result += result2 / result1;
+        k++;
+
+    }
+    cout << fixed;
+    cout.precision(16);
+
+    cout << result;
+  
+    return 0;
+}
