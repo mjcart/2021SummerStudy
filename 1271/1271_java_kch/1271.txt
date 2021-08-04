@@ -1,11 +1,15 @@
-import java.util.Scanner;
-public class Main{
-	public static void main(String[] args){
-Scanner scanner=new Scanner(System.in);
-int A=scanner.nextInt();
-int B=scanner.nextInt();
-scanner.close();
-int C= A/B;
-int D= A%B;
-System.out.println(C);
-System.out.println(D);
+ import java.util.Scanner;
+
+public class main{
+  public static void main(String[] args) {
+    Scanner scanner=new Scanner(System.in);
+    int A =scanner.nextInt();
+    int B = scanner.nextInt();
+    scanner.close();
+    int C = A/B;
+    int D = A%B;
+    System.out.println(C);
+    System.out.println(D);
+  } 
+}
+
