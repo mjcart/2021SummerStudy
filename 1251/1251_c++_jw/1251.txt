@@ -1,0 +1,62 @@
+#include <iostream>
+#include <cstring>
+#include <string>
+#include<algorithm>
+using namespace std;
+
+int main()
+{
+    string str;
+
+    cin >> str;
+
+    string s1, s2, s3, result1, result2 = "";
+    string str1 = str;
+
+    int cnt = 0;
+
+    for (int i = 0; i < str.length() - 1; i++) 
+    {
+        for (int j = i + 1; j < str.length() - 1; j++) 
+        {
+            
+            s1 = "";
+            s2 = "";
+            s3 = "";
+
+            for (int k = 0; k <= i; k++)
+            {
+                s1 += str1[k];
+            }
+            for (int k = i + 1; k <= j; k++)
+            {
+                s2 += str1[k];
+            }
+            for (int k = j + 1; k < str.length(); k++)
+            {
+                s3 += str1[k];
+            }
+
+            reverse(s1.begin(), s1.end());
+            reverse(s2.begin(), s2.end());
+            reverse(s3.begin(), s3.end());
+            
+            result1 = s1 + s2 + s3;
+         
+            if (cnt == 0)
+            {
+                result2 = result1;
+            }
+            else if (result1 < result2)
+            {
+                result2 = result1;
+            }
+            cnt++;
+        }
+    }
+
+    cout << result2;
+  
+
+    return 0;
+}

@@ -1,0 +1,47 @@
+#include <iostream>
+#include <cstring>
+#include <vector>
+#include<algorithm>
+using namespace std;
+
+int main() 
+{
+    int N, M, temp = 0;
+    int result1 = 0;
+    int result2 = 0;
+    cin >> N >> M;
+
+    int v[1000];
+
+    for (int i = 0; i < M; i++)
+    {
+        cin >> v[i];
+    }
+
+    sort(v, v + M);
+
+    
+    for (int i = 0; i < M; i++)
+    {
+        
+        if (M - i < N)
+        {
+            temp = v[i] * (M - i);
+        }
+
+        else // M이 N보다 클 경우
+        {
+            temp = v[i] * N;
+        }
+
+        if (temp > result1)
+        {
+            result1 = temp;
+            result2 = v[i];
+        }
+    }
+
+    cout << result2 << " " << result1;
+
+    return 0;
+}
