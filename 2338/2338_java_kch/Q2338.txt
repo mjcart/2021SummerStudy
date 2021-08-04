@@ -1,0 +1,16 @@
+import java.util.Scanner;	
+import java.math.BigInteger;
+
+public class Q2338 {
+
+	public static void main(String[] args)
+  {
+     Scanner sc=new Scanner(System.in);
+     BigInteger A = sc.nextBigInteger();//1000자리 넘어가야되므로 biginteger사용
+     BigInteger B = sc.nextBigInteger();
+     sc.close();
+     System.out.println(A.add(B));
+     System.out.println(A.subtract(B));
+     System.out.println(A.multiply(B));
+  }
+}
