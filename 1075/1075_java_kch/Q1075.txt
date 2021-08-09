@@ -1,0 +1,23 @@
+import java.util.Scanner;
+ 
+public class Main {
+ 
+    public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+     int N = sc.nextInt();
+     int F = sc.nextInt();
+     int a = (N/100) * 100 ; 
+     while(true) {
+       if (a%F==0){
+         int b = a % 100;
+         if(b < 10){
+          System.out.println("0" + b);
+         }else
+          System.out.println(b);
+          return ;
+       }
+      a++ ;  
+     }
+    }
+}
+  

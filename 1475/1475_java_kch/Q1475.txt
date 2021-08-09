@@ -1,0 +1,54 @@
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+ 
+public class Main {
+ 
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        int N = Integer.parseInt(br.readLine());
+ 
+        int[] plastic = new int[9];
+        buySet(plastic);
+ 
+        int cnt = 1;
+        
+        // 일의 자리부터 N자리까지 차례로 탐색.
+        while (N != 0) {
+            int temp = N % 10;
+ 
+            if (temp == 9) { // 9는 6으로 취급.
+                temp = 6;
+            }
+ 
+            if (plastic[temp] == 0) { // 현재 가지고 있는 플라스틱 숫자의 개수가 0이라면 새로 구입.
+                buySet(plastic);
+                plastic[temp]--;
+                cnt++;
+            } else { // 아니라면, 해당 플라스틱 숫자의 개수 감소.
+                plastic[temp]--;
+            }
+ 
+            N /= 10;
+        }
+ 
+        bw.write(cnt + "\n");
+        bw.flush();
+        bw.close();
+        br.close();
+    }
+ 
+    // 새로운 플라스틱 숫자 세트 구입.
+    public static void buySet(int[] plastic) {
+        for (int i = 0; i < 9; i++) {
+            if (i == 6) { // 9는 6과 같은 취급.
+                plastic[i] += 2;
+            } else {
+                plastic[i] += 1;
+            }
+        }
+    }
+ 
+}
