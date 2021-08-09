@@ -1,0 +1,44 @@
+#include <iostream>
+#include <cstring>
+#include <vector>
+#include<algorithm>
+using namespace std;
+
+bool check[1000000];
+string s;
+int k;
+vector<int> v;
+
+bool go(int x) {
+    int result = 0;
+    for (int i = 0; s[i]; i++) {
+
+        result = result * 10 + (s[i] - '0');
+        result %= x;
+
+    }
+
+    return result == 0;
+}
+int main() {
+
+    cin >> s >> k;
+
+    for (int i = 2; i < 1000000; i++) {
+        if (!check[i]) {
+            v.push_back(i);
+            for (int j = i * 2; j < 1000000; j += i) check[j] = true;
+        }
+    }
+
+    for (int i = 0; i < v.size(); i++) {
+        if (v[i] >= k) break;
+        if (go(v[i])) {
+            cout << "BAD " << v[i]; return 0;
+        }
+    }
+
+    cout << "GOOD";
+
+    return 0;
+}
