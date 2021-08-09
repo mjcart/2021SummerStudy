@@ -1,0 +1,23 @@
+
+import java.util.Scanner;
+
+public class Q1547 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+    int M = sc.nextInt();
+    int a = 1;
+    for(int i=0;i<M; i++){
+      int X =sc.nextInt();
+      int Y =sc.nextInt();
+      if(a == X){
+         a = Y;
+      }else if(a == Y){
+      a = X;
+      }  
+    }
+  
+    System.out.println(a);
+    sc.close();
+	}
+}
