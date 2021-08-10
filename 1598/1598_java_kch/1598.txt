@@ -1,0 +1,15 @@
+import java.util.Scanner;
+public class Q1598 {
+ 
+	public static void main(String[] args) {
+     Scanner sc = new Scanner(System.in);
+     int a = sc.nextInt();
+     int b = sc.nextInt();
+     int c = (a-1)/4;
+     int d = (a-1)%4;
+     int f = (b-1)/4;
+     int e = (b-1)%4;
+     System.out.println(Math.abs(c-f)+Math.abs(d-e));
+     
+	}
+}
