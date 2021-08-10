@@ -1,0 +1,27 @@
+#include <iostream>
+#include <cstring>
+#include <vector>
+#include<algorithm>
+using namespace std;
+
+int main(void) {
+
+    long long int n1, n2;
+    
+    cin >> n1 >> n2;
+    long long int result = 0;
+
+    if (n1 < n2)
+    {
+        result = n2 * (n2 + 1) / 2 - n1 * (n1 - 1) / 2;
+    }
+    else
+    {
+        result = n1 * (n1 + 1) / 2 - n2 * (n2 - 1) / 2;
+    }
+
+   
+    cout << result;
+ 
+    return 0;
+}
