@@ -1,0 +1,45 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include<algorithm>
+using namespace std;
+
+int main(void) {
+
+	string str; // 문자열로 입력
+	int cnt1 = 0, cnt2 = 0;
+	int result;
+	cin >> str;
+
+	
+	
+	for (int i = 0; i < str.length(); i++)
+	{
+		if (i < str.length())
+		{
+			if (str[i] == '0')
+			{
+				if (str[i] != str[i + 1])
+				{
+					cnt1++;
+				}
+
+			}
+	
+			if (str[i] == '1')
+			{
+				if (str[i] != str[i + 1])
+				{
+					cnt2++;
+				}
+
+			}
+		}
+		
+	}
+	
+	cout << min(cnt1, cnt2);
+
+	
+    return 0;
+}

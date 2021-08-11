@@ -1,0 +1,63 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include<math.h>
+using namespace std;
+
+int main(void) {
+
+	while (true)
+	{
+		int num, result = 0;
+		
+		string s;
+		cin >> s;
+		int len = s.length();
+
+		if (s == "#")
+		{
+			break;
+		}
+
+		for (int i = 0; i < len; i++)
+		{
+			switch (s[i])
+			{
+			case '-':
+				num = 0;
+				break;
+			case '\\':
+				num = 1;
+				break;
+			case '(':
+				num = 2;
+				break;
+			case '@':
+				num = 3;
+				break;
+			case '?':
+				num = 4;
+				break;
+			case '>':
+				num = 5;
+				break;
+			case '&':
+				num = 6;
+				break;
+			case '%':
+				num = 7;
+				break;
+			case '/':
+				num = -1;
+				break;
+			default:
+				break;
+			}
+			result += num * pow(8, len - (i + 1));
+		}
+
+		cout << result << "\n";
+	}
+	
+    return 0;
+}
