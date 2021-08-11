@@ -1,0 +1,33 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include<algorithm>
+using namespace std;
+
+int main(void) {
+
+    int num, cnt = 0;
+    cin >> num;
+    int result = 1;
+    string str;
+
+    while (true)
+    {
+        str = to_string(result);
+
+        if (str.find("666") != -1) { // find = 위치를 반환하는 함수
+            cnt++;
+        }
+        
+        if (cnt == num) {
+            cout << result << endl;
+            break;
+        }
+
+        result++;
+    }
+  
+ 
+    
+    return 0;
+}
