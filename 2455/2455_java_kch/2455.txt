@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class Q2455 {
+
+	public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int A =sc.nextInt();
+    int N = sc.nextInt();
+    int A1 = sc.nextInt();
+    int A2 = sc.nextInt();
+    int B1 = sc.nextInt();
+    int B2 = sc.nextInt();
+    int M = sc.nextInt();
+    int B = sc.nextInt();
+    int x = N - A1 + A2 ;
+    int y = x -B1 + B2 ;
+    int max = N ;
+    if(max < x){
+      max = x;
+      if(max < y){
+        max = y;
+      }
+    }else if (max <y){
+      max = y;
+    }
+    System.out.println(max);
+	}
+}
