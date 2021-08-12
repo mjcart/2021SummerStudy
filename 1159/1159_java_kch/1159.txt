@@ -1,0 +1,30 @@
+import java.util.*;
+import java.io.*;
+
+public class Q1159 {
+
+	public static void main(String[] args) {
+
+    Scanner sc = new Scanner(System.in);
+    int N = sc.nextInt();
+    String[] a = new String[N];
+    int asc = 0;
+    int cnt[] = new int[26];
+    for(int i =0;i<N;i++){
+      a[i] = sc.next();
+    }
+    for(int i=0;i<N;i++){
+      asc = (int)(a[i].charAt(0))-97;
+      cnt[asc]++;
+    }
+    boolean res =true;
+    for(int i =0;i<cnt.length;i++){
+      if(cnt[i]>=5){
+        res =false;
+        System.out.print((char)(i+97)+"");
+      }
+    }
+    if(res)
+      System.out.println("PREDAJA");
+	}
+}
