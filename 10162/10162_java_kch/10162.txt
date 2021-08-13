@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class Q10162{
+  public static void main(String[] args){
+    Scanner sc = new Scanner(System.in);
+    int T = sc.nextInt();
+    int h = 0;
+    int m = 0;
+    int k = 0;
+
+    if(T%10 ==0){
+    if(300<=T&&T<=10000){
+      h = T/300;
+      m = (T-(h*300))/60;
+      k = (T-(h*300)-(60*m))/10;
+      System.out.println(h + " " + m + " " + k);
+    }else if(60<=T&&T<300){
+      m = T/60;
+      k = (T-(60*m))/10;
+      System.out.println(h + " " + m + " " + k);
+    }else if(10<=T && T<60){
+      k = T/10;
+      System.out.println(h + " " + m + " " + k);
+    }
+    }else{
+      System.out.println(-1);
+    }
+    sc.close();
+  }
+  
+}
