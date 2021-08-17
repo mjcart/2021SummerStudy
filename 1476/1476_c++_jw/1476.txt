@@ -1,0 +1,25 @@
+#include<iostream>
+#include<string>
+#include<algorithm> 
+using namespace std;
+
+int main() {
+    
+    int E, S, N, result = 0;
+
+    cin >> E >> S >> N;
+    
+    while (true)
+    {
+        result++;
+        if ((result - E) % 15 == 0 && (result - S) % 28 == 0 && (result - N) % 19 == 0)
+        {
+            break;
+        }
+
+    }
+
+    cout << result;
+
+    return 0;
+}
