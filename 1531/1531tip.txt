@@ -2,3 +2,5 @@ python
 jmj
 2차원 배열 생성시 얕은 복사X ex)a=[[0]*100]*100 =>a=[[0 for i in range(100)]for j in range(100)]
 2중 for문으로 각 좌표에 +1하는 방식
+
+참고했습니다
