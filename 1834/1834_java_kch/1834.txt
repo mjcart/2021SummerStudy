@@ -1,0 +1,16 @@
+import java.util.Scanner;
+import java.io.*;
+
+public class Q1834 {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        long N = sc.nextLong();
+        long x =0;
+        for(long i=1;i<N;i++){
+          x += (N+1)*i;
+        }
+
+        System.out.println(x);
+    }
+}
+    
