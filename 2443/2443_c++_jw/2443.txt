@@ -1,0 +1,27 @@
+#include<iostream>
+#include<string>
+#include<vector> 
+using namespace std;
+
+int main() {
+    
+    int num;
+    cin >> num;
+
+    for (int i = 0; i < num; i++)
+    {
+        for (int j = 0; j < i; j++)
+        {
+            cout << " ";
+        } 
+
+        for (int j = num * 2 - 1; j > 2 * i;j--)
+        {
+            cout << "*";
+        }
+ 
+        cout << "\n";
+    }
+    
+    return 0;
+}

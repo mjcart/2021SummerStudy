@@ -1,0 +1,55 @@
+#include<iostream>
+#include<string>
+#include<vector> 
+using namespace std;
+
+int main() {
+    
+    int num;
+    string str, temp;
+    vector <string> v;
+
+    cin >> num;
+
+    for (int i = 0; i < num; i++)
+    {
+        cin >> str;
+        if (v.size() == 0)
+        {
+            v.push_back(str);
+        }
+        else
+        {
+            bool check = true;
+
+            for (int j = 0; j < v.size(); j++)
+            {
+                for (int k = 0; k < str.size(); k++)
+                {
+                    if (v[j] == str)
+                    {
+                        check = false;
+                        break;
+                    }
+
+                    str = str + str.at(0);
+                    str.erase(0, 1);
+                }
+                if (!check)
+                {
+                    break;
+                }
+            }
+            if (check)
+            {
+                v.push_back(str);
+            }
+           
+        }
+    
+    }
+    
+    cout << v.size();
+
+    return 0;
+}
