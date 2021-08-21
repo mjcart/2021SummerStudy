@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Q1094 {
+  public static void main(String[] args) {
+      Scanner scan = new Scanner(System.in);
+
+      int input = scan.nextInt();
+      int count = bitCount(input);
+      System.out.printf("%d", count);
+      scan.close();
+
+  }
+
+  public static int bitCount(int input) {
+      int count = 0;
+      int mask = 1 << 31;
+
+      while (true){
+          if (mask == 0){
+              break;
+          }
+          if((mask & input) == 0){
+              
+          }else {
+              count++;
+          }
+
+          mask = mask >>> 1;
+      }
+
+      return count;
+  }
+}

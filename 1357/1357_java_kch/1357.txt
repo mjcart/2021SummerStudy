@@ -1,0 +1,32 @@
+import java.util.Scanner;
+import java.io.*;
+
+public class Q1357 {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int X = sc.nextInt();
+        int Y = sc.nextInt();
+        int X1 = 0;
+        int Y1 = 0;
+        String str1 = Integer.toString(X);
+        String str2 = Integer.toString(Y);
+        String new1 = "";
+        String new2 = "";
+        for(int i=str1.length()-1;i>-1;i--){
+          new1 += str1.charAt(i);
+        }
+        for(int i=str2.length()-1;i>-1;i--){
+          new2 += str2.charAt(i);
+        }
+        X1 = Integer.parseInt(new1);
+        Y1 = Integer.parseInt(new2);
+        int sum = X1 + Y1 ;
+        String final1 = "";
+        String tot = Integer.toString(sum);
+        for(int i = tot.length()-1; i>-1; i--){
+            final1 += tot.charAt(i);
+        }
+        int final2 = Integer.parseInt(final1);
+        System.out.println(final2);
+    }
+}
