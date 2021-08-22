@@ -1,0 +1,19 @@
+#include<iostream>
+#include<string>
+#include<vector> 
+using namespace std;
+
+int main() {
+    
+	int num, temp = 0, n;
+	cin >> num;
+
+	for (int i = 0; i < num; i++) {
+		cin >> n;
+		temp += n;
+	}
+
+	cout << temp - num + 1;
+
+    return 0;
+}

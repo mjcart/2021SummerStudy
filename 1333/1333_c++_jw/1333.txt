@@ -1,0 +1,42 @@
+#include<iostream>
+#include<string>
+#include<vector> 
+using namespace std;
+
+int main() {
+    
+    int N, L, D;
+    
+    cin >> N >> L >> D;
+
+    int result = 0;
+    vector<int>v;
+
+    for (int i = 0; i < N; i++)
+    {
+        for (int j = 0; j < L; j++)
+        {
+            v.push_back(1);
+        }
+        if (i != N - 1)
+        {
+            for (int j = 0; j < 5; j++)
+            {
+                v.push_back(0);
+            }
+        }
+    }
+
+    while (result < v.size())
+    {
+        if (v[result] == 0)
+        {
+            break;
+        }    
+            result += D;       
+    }
+
+    cout << result;
+
+    return 0;
+}
