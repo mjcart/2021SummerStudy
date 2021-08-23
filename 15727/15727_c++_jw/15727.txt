@@ -1,0 +1,15 @@
+#include<iostream>
+#include<string>
+#include<vector> 
+using namespace std;
+
+
+int main() {
+    
+    int num, res;
+    cin >> num;
+    res = (num - 1) / 5 + 1;
+    cout << res;
+
+    return 0;
+}

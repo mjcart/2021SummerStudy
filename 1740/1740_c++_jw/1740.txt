@@ -1,0 +1,41 @@
+#include<iostream>
+#include<string>
+#include<vector> 
+using namespace std;
+
+long long p(int a, int b) {
+
+    long long ans = 1;
+    for (int i = 0; i < b; i++)
+    {
+        ans = ans * a;
+        
+    }
+    return ans;
+}
+int main() {
+    
+    long long num;
+    int n[100];
+
+    cin >> num;
+    int i = 0;
+    long long ans = 0;
+    long long temp = 1;
+
+    while (num > 1)// 2진수로 변환
+    {
+        n[i++] = num % 2;
+        num /= 2;
+    }
+    n[i++] = 1;
+
+    for (int j = 0; j < i; j++)
+    {
+        ans += p(3, j) * n[j];
+    }
+
+    cout << ans;
+
+    return 0;
+}
