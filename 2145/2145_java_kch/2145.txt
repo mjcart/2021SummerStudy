@@ -1,0 +1,38 @@
+import java.io.*;
+import java.math.*;
+import java.util.ArrayList;
+
+public class Q2145 {
+    public static void main(String[] args) throws IOException{
+      BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+      
+
+
+      while(true){
+        String N = br.readLine();
+        if(N.equals("0")){
+          break;
+        }
+
+        String[] num = N.split("");
+        testNum(num);
+      }
+     
+      
+    }
+    //이중 while문이 잘안돼서 재귀함수 형식 구현
+    static void testNum(String[] num){
+      int a =0;
+      for(int i=0;i< num.length;i++){
+        a += Integer.parseInt(num[i]);
+      }
+      
+      if((a/10)==0){
+        System.out.println(a);
+      }else{
+        //이중 while문 쓰기엔 잘 안돼서 재귀 함수 사용
+        testNum(String.valueOf(a).split(""));
+      }
+    }
+}
+    
