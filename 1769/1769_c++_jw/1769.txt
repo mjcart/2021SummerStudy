@@ -1,0 +1,38 @@
+#include<iostream>
+#include<string>
+#include<vector> 
+using namespace std;
+
+int main() {
+    
+    string s;
+    cin >> s;
+    int res, cnt = 0;
+    int temp = 0;
+
+    while (s.length() > 1)
+    {
+        res = 0;
+
+        for (int i = 0; i < s.length(); i++)
+        {
+            res += s[i] - '0';        
+        }
+        s = to_string(res);
+     
+        cnt++;
+    }
+    cout << cnt << "\n";
+    
+    if (s == "3" || s == "6" || s == "9")
+    {
+        cout << "YES";
+    }
+    else
+    {
+        cout << "NO";
+    }
+   
+
+    return 0;
+}
