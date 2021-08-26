@@ -1,0 +1,30 @@
+#include<iostream>
+#include<string>
+#include<vector> 
+using namespace std;
+
+int main() {
+
+    int num, sum = 0;
+    cin >> num;
+    int array[10000];
+    for (int i = 0; i < num; i++)
+    {
+        cin >> array[i];
+        sum += array[i];
+    }
+
+    sum = sum / 2;
+
+    for (int i = 0; i < num; i++)
+    {
+        int temp = 0;
+        for (int j = 0; j < num; j += 2)
+        {
+            temp += array[(i + j) % num]; // 3 /5 7 6
+        }
+        cout << temp - sum << "\n";
+    }
+
+    return 0;
+}
