@@ -1,0 +1,24 @@
+import java.io.*;
+import java.util.*;
+public class Q2693{
+
+	public static void main(String[] args){
+    Scanner sc = new Scanner(System.in);
+    int T =sc.nextInt();
+    
+    int[] a = new int[10];
+
+    int[] result = new int[T];
+
+    for(int i=0; i<T;i++){
+      for(int j=0;j<10;j++){
+      a[j] = sc.nextInt();
+      }
+    Arrays.sort(a);
+    result[i] = a[7];
+    }
+    for(int i=0;i<T;i++){
+      System.out.println(result[i]);
+    }
+	}
+}
