@@ -1,0 +1,30 @@
+import java.util.Scanner;
+import java.io.*;
+import java.math.*;
+import java.util.*;
+
+public class q2435 {
+    public static void main(String[] args)throws IOException{
+      Scanner sc = new Scanner(System.in);
+      int N = sc.nextInt();
+      int k = sc.nextInt();
+      int max = -2147483648;
+      int max1=0;
+      int[] w = new int[N];
+      for(int i=0;i<N;i++){
+        w[i] = sc.nextInt();
+      }
+      for(int i=0;i<=N-k;i++){
+        for(int j=i;j<i+k;j++){
+          max1 += w[j];
+        }
+        if(max1 > max){
+            max = max1;
+          }
+      max1 = 0;
+      }
+      
+      System.out.println(max);
+    }
+}
+    
