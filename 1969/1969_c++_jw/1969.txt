@@ -1,0 +1,51 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+	
+	int n1, n2, result = 0;
+	cin >> n1 >> n2;
+
+	char arr[1100][100];
+	char res[100];
+	for (int i = 0; i < n1; i++) // 각각 따로 입력
+	{
+		for (int j = 0; j < n2; j++)
+		{
+			cin >> arr[i][j];
+		}
+	}
+
+	for (int i = 0; i < n2; i++)
+	{
+		int cnt[20] = { 0, }; // T까지 있기때문에
+
+		for (int j = 0; j < n1; j++) // 세로줄에있는 알파벳 개수 +1
+		{
+			cnt[arr[j][i] - 'A']++; 
+		}
+
+		int temp = 0, index = 0;
+
+		for (int j = 0; j < 20; j++)
+		{
+			if (temp < cnt[j]) // 가장 많이 있는 알파벳 찾기
+			{
+				temp = cnt[j];
+				index = j;
+			}
+		}
+		result += cnt[0] + cnt[2] + cnt[6] + cnt[19]; 
+		result -= cnt[index];
+		res[i] = index + 'A';
+	}
+
+	for (int i = 0; i < n2; i++)
+	{
+		cout << res[i];
+	}
+	cout << "\n" << result;
+	
+	return 0;
+}
