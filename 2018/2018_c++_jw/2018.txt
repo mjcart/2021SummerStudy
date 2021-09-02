@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	
+	int num;
+    int cnt = 0;
+	cin >> num;
+    
+	for (double i = 1; i < num + 1; i++)
+	{
+		for (double j = 1; j < num + 1; j++)
+		{
+			if (num == ((j - 1) / 2 + i) * j)
+			{
+				cnt++;
+				break;
+			}
+			else if (num < ((j - 1) / 2 + i) * j)
+			{
+				break;
+			}
+		}
+	}
+	cout << cnt;
+ 
+	return 0;
+}
+

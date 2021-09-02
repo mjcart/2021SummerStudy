@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	
+	int n1, n2, n3;
+	int temp = 0;
+	cin >> n1 >> n2 >> n3;
+
+	if (n1 > n2)
+	{
+		temp = n1;
+	}
+	else
+	{
+		temp = n2;
+	}
+
+	if (temp < n3)
+	{
+		temp = n3;
+	}
+
+	int result = 3 * temp - n1 - n2 - n3;
+
+	cout << result;
+	return 0;
+}
