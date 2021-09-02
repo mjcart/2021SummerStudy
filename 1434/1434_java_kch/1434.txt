@@ -1,0 +1,23 @@
+import java.util.*;
+import java.io.*;
+ 
+public class Q1434 {
+	public static void main(String[] args){
+		Scanner sc = new Scanner(System.in);
+    int N = sc.nextInt();
+    int M = sc.nextInt();
+    int[] n1 = new int[N];
+    int[] m1 = new int[M];
+    int sum1 = 0;
+    int sum2 = 0;
+    for(int i=0;i<N;i++){
+      n1[i] = sc.nextInt();
+      sum1 += n1[i];
+    }
+    for(int i=0;i<M;i++){
+      m1[i] = sc.nextInt();
+      sum2 += m1[i];
+    }
+    System.out.println(sum1-sum2);
+	}
+}
