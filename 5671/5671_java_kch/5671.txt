@@ -1,0 +1,36 @@
+import java.util.*;
+import java.io.*;
+ 
+public class Q5671 {
+	public static void main(String[] args) throws IOException{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    String input = "";
+
+    while((input=br.readLine())!=null){
+      String[] str = input.split(" ");
+
+      int N = Integer.parseInt(str[0]);
+      int M = Integer.parseInt(str[1]);
+      int cnt = 0;
+
+      loop:for(int i=N; i<=M;i++){
+        boolean[] bl = new boolean[10];
+        String num = Integer.toString(i);
+
+        for(int j=0;j<num.length();j++){
+          int n = num.charAt(j) - '0';
+
+          if(bl[n]){
+            continue loop;
+
+          }else{
+            bl[n] = true;
+          }
+        }
+          cnt++;
+        }
+      System.out.println(cnt);
+      
+    }
+  }
+}
