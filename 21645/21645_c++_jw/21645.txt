@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+
+int main() {	
+	int n1, n2, n3, res;
+	cin >> n1 >> n2 >> n3;
+	if (n2 < n3) res = n1 * n2;
+	else res = n1 * ((n3 - 1) + n2 / n3);	
+	cout << res;
+	return 0;
+}
