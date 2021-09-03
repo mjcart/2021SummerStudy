@@ -1,0 +1,22 @@
+import java.util.*;
+import java.io.*;
+ 
+public class 1789 {
+	public static void main(String[] args) throws IOException{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+      Scanner sc = new Scanner(System.in);
+      long N = sc.nextLong();
+      long sum = 1;
+      int i = 1;
+      while(sum < N){
+        i++;
+        sum += i;
+      }
+      if(sum > N ){
+        i--;
+      }
+      System.out.println(i);
+      
+    
+  }
+}
