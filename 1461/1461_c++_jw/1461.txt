@@ -1,0 +1,48 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+int main()
+{
+    int N, M;
+    int Result = 0;
+    vector<int> plus;
+    vector<int> minus;
+
+    vector<int>* pv;
+    cin >> N >> M;
+
+    for (int i = 0; i < N; i++)
+    {
+        int temp;
+        cin >> temp;
+        if (temp > 0) plus.push_back(temp);
+        else minus.push_back(abs(temp));
+    }
+
+    sort(plus.begin(), plus.end());
+    sort(minus.begin(), minus.end());
+
+    int multiply = 1;
+    while (1)
+    {
+        if (plus.size() == 0 && minus.size() == 0) break;
+
+        if (plus.size() == 0) pv = &minus;// 음수밖에없으면 마이너스 최댓값의 벡터주소
+        else if (minus.size() == 0) pv = &plus;
+        else pv = plus.back() > minus.back() ? &plus : &minus; 
+
+        Result += pv->back() * multiply;
+        if (multiply == 1) multiply = 2; // 먼데부터 차례대로
+
+        for (int j = 0; j < M; j++)
+        {
+            if (pv->size() > 0) pv->pop_back(); // 한꺼번에 옮길수있는 수 만큼 큰값부터 없애기
+        }
+    }
+
+    cout << Result;
+
+}
