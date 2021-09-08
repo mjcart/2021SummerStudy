@@ -1,0 +1,39 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <map>
+
+using namespace std;
+
+int main() { // 10번 넘게 시도했는데 기준이 애매해서 그냥 코드 외웠습니다
+    int num;
+    cin >> num;
+
+    map<int, int> map1;
+    map<int, int> map2;
+
+    for (int i = 0; i < num; i++)
+    {
+        int n1, n2;
+        cin >> n1 >> n2;
+        map1[n1]++;
+        map2[n2]++;
+    }
+
+    int cnt = 0;
+
+    for (auto temp : map1)
+    {
+        if (temp.second >= 2)
+            cnt++;
+    }
+
+    for (auto temp : map2)
+    {
+        if (temp.second >= 2)
+            cnt++;
+    }
+
+    cout << cnt << endl;
+
+}
