@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(NULL); cout.tie(NULL);
+
+    bool chk[201][201];
+    int n1, n2;
+    int cnt = 0;
+    cin >> n1 >> n2;
+
+    for (int i = 1; i <= n1; i++) { // 전체 true 초기화, 이거안하면 틀림
+        for (int j = i + 1; j <= n1; j++) {
+            chk[i][j] = chk[j][i] = true;
+        }
+    }
+
+    for (int i = 0; i < n2; i++) // 안되는 조합만 false
+    {
+        int a, b;
+        cin >> a >> b;
+        chk[a][b] = chk[b][a] = false;
+    }
+
+    for (int i = 1; i <= n1 - 2; i++)  // 사용한 아이스크림 중복처리
+    {
+        for (int j = i + 1; j <= n1 - 1; j++)
+        {
+            if (chk[i][j]) {
+                
+                for (int k = j + 1; k <= n1; k++)
+                {
+                    if (chk[i][k] && chk[j][k] )
+                    {
+                        cnt++;
+                    }
+                }
+
+            }          
+        }
+    }
+    cout << cnt;
+    return 0;
+}
