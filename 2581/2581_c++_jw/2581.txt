@@ -1,0 +1,49 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	
+	int n1, n2;
+	int min1 = 10000;
+	int result = 0;
+	cin >> n1 >> n2;
+
+	while (n1 <= n2)
+	{
+		bool chk = true;
+		int temp = 0;
+		for (int i = 1; i <= n1; i++)
+		{		
+			if (n1 == 1)
+			{
+				chk = false;
+				break;
+			}
+			if (n1 % i == 0)
+			{
+				temp++;
+			}
+
+			if (temp > 2)
+			{
+				chk = false;
+				break;
+			}
+		}
+		if (chk)
+		{
+			min1 = min(min1, n1);
+			result += n1;
+		}
+		n1++;
+	}
+	if (result == 0)
+	{
+		cout << -1;
+	}
+	else
+	{
+		cout << result << "\n" << min1;
+	}
+	return 0;
+}
