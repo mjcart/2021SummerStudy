@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+int func(int a, int b) {
+
+	int temp;
+	while (b)
+	{
+		temp = a % b;
+		a = b;
+		b = temp;
+	}
+	return a;
+}
+
+int main() {
+	
+	int n1, n2;
+	cin >> n1 >> n2;
+	
+	cout << func(n1, n2) << "\n" << n1 * n2 / func(n1, n2);
+	return 0;
+}
